@@ -25,6 +25,8 @@ requirements:
     - hatchling
   run:
     - python >=${{ python_min }}
+    # This is marked as [dev] dependency, but it's imported in the main __init__.py.
+    - openusd >=25.11
 tests:
   - python:
       imports:
