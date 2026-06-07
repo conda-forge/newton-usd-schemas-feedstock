@@ -23,11 +23,11 @@ requirements:
     - python ${{ python_min }}.*
     - pip
     - hatchling
+  run:
+    - python >=${{ python_min }}
     # This are marked as [dev] dependencies (but imported in the main __init__.py).
     - openusd >=25.11
     - usd-exchange >=2.2
-  run:
-    - python >=${{ python_min }}
 tests:
   - python:
       imports:
