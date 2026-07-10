@@ -25,6 +25,9 @@ requirements:
     - hatchling
   run:
     - python >=${{ python_min }}
+    # This are marked as [dev] dependencies (but imported in the main __init__.py).
+    - openusd >=25.11
+    - usd-exchange >=2.2
 tests:
   - python:
       imports:
@@ -40,7 +43,6 @@ tests:
     requirements:
       run:
         - python ${{ python_min }}.*
-        - openusd >=25.11
 
 about:
   homepage: https://github.com/newton-physics/newton-usd-schemas
