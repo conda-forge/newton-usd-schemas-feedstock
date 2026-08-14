@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: newton-usd-schemas
-  version: "0.4.1"
+  version: "0.5.0"
   build_number: 0
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name|replace("-", "_")|lower }}-${{ version }}.tar.gz
-  sha256: 1f6946ce2741d7a86ca8e3e84d7b64328c88b42a3b29160a7607b2ce0c837bf4
+  sha256: a404232e9f89cfce130ee5ed5c8b6b23b187514e857803b5d7b08568bb2516e0
 
 build:
   noarch: python
@@ -33,7 +33,9 @@ tests:
       imports:
         - newton_usd_schemas
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - script:
       - python -m unittest discover -v -s ./tests
     files:
