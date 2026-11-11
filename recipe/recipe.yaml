@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: newton-usd-schemas
-  version: "0.6.0"
+  version: "0.7.0"
   build_number: 0
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name|replace("-", "_")|lower }}-${{ version }}.tar.gz
-  sha256: 024aac16c00be5857e0cc332b6b1ee454500154225c4094d61db74760e17ae45
+  sha256: 65722fd89f554be6fa61d4e493c34a54461fd26b2b9dc0e85f19aa6d8ac2978e
 
 build:
   noarch: python
