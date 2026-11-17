@@ -27,7 +27,7 @@ requirements:
     - python >=${{ python_min }}
     # This are marked as [dev] dependencies (but imported in the main __init__.py).
     - openusd >=25.11
-    - usd-exchange >=2.2
+    - usd-exchange >=3.0.1
 tests:
   - python:
       imports:
