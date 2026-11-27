@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: newton-usd-schemas
-  version: "0.7.0"
+  version: "0.8.0"
   build_number: 0
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name|replace("-", "_")|lower }}-${{ version }}.tar.gz
-  sha256: 65722fd89f554be6fa61d4e493c34a54461fd26b2b9dc0e85f19aa6d8ac2978e
+  sha256: c04fadc30053f699245634518d66b57a7e333ca08161a400b7a35f9fc64a5564
   patches:
     # The openusd conda package provides the usd-core Python distribution.
     - use-conda-openusd-metadata.patch
