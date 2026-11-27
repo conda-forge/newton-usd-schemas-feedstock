@@ -1,0 +1,32 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -7,19 +7,12 @@
+ description = "OpenUSD schema definitions for the Newton physics engine"
+ readme = "README.md"
+ requires-python = ">=3.10"
+-dependencies = []
++dependencies = ["usd-core>=25.5"]
+ 
+ [project.urls]
+ Homepage = "https://github.com/newton-physics/newton-usd-schemas"
+ Repository = "https://github.com/newton-physics/newton-usd-schemas"
+ Changelog = "https://github.com/newton-physics/newton-usd-schemas/blob/main/CHANGELOG.md"
+-
+-[project.optional-dependencies]
+-usd = [
+-    "usd-core>=25.5 ; python_version < '3.14'",
+-    "usd-core>=26.11 ; python_version >= '3.14'",
+-]
+-usdex = ["usd-exchange>=3.0.1"]
+ 
+ [dependency-groups]
+ dev = [
+@@ -28,8 +21,6 @@
+     "black>=25.1",
+     "coverage>=7.4",
+     "unittest-xml-reporting>=3.2.0",
+-    "newton-usd-schemas[usd] ; platform_machine != 'aarch64' or python_version >= '3.14'",
+-    "newton-usd-schemas[usdex] ; platform_machine == 'aarch64' and python_version < '3.14'",
+ ]
+ 
+ [build-system]
