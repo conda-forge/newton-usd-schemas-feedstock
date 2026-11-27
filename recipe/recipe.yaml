@@ -12,6 +12,9 @@ package:
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name|replace("-", "_")|lower }}-${{ version }}.tar.gz
   sha256: 65722fd89f554be6fa61d4e493c34a54461fd26b2b9dc0e85f19aa6d8ac2978e
+  patches:
+    # The openusd conda package provides the usd-core Python distribution.
+    - use-conda-openusd-metadata.patch
 
 build:
   noarch: python
@@ -25,9 +28,10 @@ requirements:
     - hatchling
   run:
     - python >=${{ python_min }}
-    # This are marked as [dev] dependencies (but imported in the main __init__.py).
-    - openusd >=25.11
-    - usd-exchange >=3.0.1
+    # Conda-forge provides openusd >=25.5 on all supported platforms.
+    # It supplies usd-core directly, so the patched Python metadata can use
+    # a single minimum version without the usd-exchange fallback.
+    - openusd >=25.5
 tests:
   - python:
       imports:
